@@ -37,7 +37,7 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
 		function displayImages (){
 			//console.log("click")
 			var interest = $(this).attr("data-name");
-    		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + interest + "&api_key=dc6zaTOxFJmzC&limit=10";
+    		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + interest + "&api_key=dc6zaTOxFJmzC&limit=10";
 	//to pull from Giphy api
 		$.ajax({
           url: queryURL,
