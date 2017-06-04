@@ -56,7 +56,7 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
               var rating = results[i].rating;
 
     // Creates paragraph tag
-              var p = $("<p>").text("Rating: " + rating);
+              var p = $("<p class='rating'>").text("Rating: " + rating);
 
     // creates an image tag
               var personImage = $("<img class = personImage>");
