@@ -64,10 +64,13 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
               // Gif div goes to htmle
               $("#gifs-appear-here").prepend(gifDiv);
 
-		}
-	}
-});
+			}
 
+		});
+
+	});
+
+});
 
 		
 //new section 
