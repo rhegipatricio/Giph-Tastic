@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-var animate = "0"
-var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick & Morty", "The Goonies"];
+var animate = "0";
+var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick Sanchez", "Morty Smith", "Mr. Meeseeks", "The Goonies", "Corgi", "The Hangover", "Parakeet", "Beer", "Liquor", "Barney Stinson"];
 	
 	//function to render the buttons
 	function renderButtons () {
@@ -11,9 +11,9 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
     // Adds class of Interest
           	a.addClass("interest");
     // Adding data attribute to interest
-         	 a.attr("data-name", interests[i]);
+         	a.attr("data-name", interests[i]);
     // Providing the button's text with a value of the interest at index i
-         	 a.text(interests[i]);
+         	a.text(interests[i]);
     // Adding the button to the HTML
           	$("#interest-view").append(a);
         	}
@@ -25,7 +25,7 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
       	var interest = $("#interest-input").val().trim()
       	if (interest !== "")
       	interests.push(interest);
-      	console.log(interests)
+      	//console.log(interests)
       	renderButtons();
       	});
 
