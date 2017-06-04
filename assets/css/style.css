@@ -2,3 +2,9 @@
     float: left;
     margin-right: 10px;
 }
+
+button.interest {
+	color: white;
+	background-color: grey;
+	border-radius: 15px;
+}

@@ -66,8 +66,9 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
               personImage.attr("src", results[i].images.fixed_height_still.url).val(i);
 
     // Appending paragraph and personImage to the gifDiv
-              gifDiv.append(p);
               gifDiv.append(personImage);
+              gifDiv.append(p);
+              
 
     // Gif div goes to html
               $("#gifs-appear-here").prepend(gifDiv);
