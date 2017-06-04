@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick & Morty"];
+var animate = "0"
+var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick & Morty", "The Goonies"];
 	
 	function renderButtons () {
 		$("#interest-view").empty();
@@ -19,24 +20,28 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
 
       	$("#add-interest").on("click", function(event) {
       	event.preventDefault();
-      	var interest = $("#interest-input").val().trim();
+      	var interest = $("#interest-input").val().trim()
+      	if (interest !== "")
       	interests.push(interest);
+      	console.log(interests)
       	renderButtons();
       	});
 
       	renderButtons();
 
 
- });	
+	
 
-		$("button").on("click", function() {
+		function displayImages (){
+			console.log("click")
 			var interest = $(this).attr("data-name");
     		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + interest + "&api_key=dc6zaTOxFJmzC&limit=10";
-
+//to pull from Giphy api
 		$.ajax({
           url: queryURL,
           method: "GET"
         }).done(function(response) {
+        	console.log(response)
 
         	var results = response.data;
         	for (var i = 0; i < results.length; i++) {
@@ -51,27 +56,43 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
               var p = $("<p>").text("Rating: " + rating);
 
               // creates an image tag
-              var personImage = $("<img>");
+              var personImage = $("<img class = personImage>");
 
               // Giving the image tag an src attribute of a proprty pulled off the
               // result item
-              personImage.attr("src", results[i].images.fixed_height.url);
+              personImage.attr("src", results[i].images.fixed_height_still.url).val(i);
 
               // Appending paragraph and personImage to the gifDiv
               gifDiv.append(p);
               gifDiv.append(personImage);
 
-              // Gif div goes to htmle
+              // Gif div goes to html
               $("#gifs-appear-here").prepend(gifDiv);
 
 			}
 
 		};
+			$(".personImage").on("click", function(){
+				console.log("click")
+				console.log(this.value)
+				if (animate == 0){
+				var imageVal = this.value
+				console.log(imageVal)
+				$(this).attr("src", results[imageVal].images.fixed_height.url)
+				animate ++
 
+			}else {
+				var imageVal = this.value
+				$(this).attr("src", results[imageVal].images.fixed_height_still.url)
+				animate --
+			}
+			});
 	});
+        
 
+};
+        $(document).on("click", ".interest", displayImages);
 });
-
 		
 //new section 
 
