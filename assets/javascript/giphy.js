@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 var animate = "0";
-var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick Sanchez", "Morty Smith", "Mr. Meeseeks", "The Goonies", "Corgi", "The Hangover", "Parakeet", "Beer", "Liquor", "Barney Stinson"];
+var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orlando Magic", "Rick Sanchez", "Morty Smith", "Mr. Meeseeks", "The Goonies", "Corgi", "The Hangover", "Parakeet", "Beer", "Liquor", "Barney Stinson", "Tracy McGrady", "Gal Gadot", "Camila Mendes", "UCF", "Guardians Of The Galaxy", "Power Rangers", "Teenage Mutant Ninja Turtles", "Contra", "Super Punch Out", "The Legend Of Zelda", "Attack On Titan", "Sasha Banks", "Alexa Bliss"];
 	
 	//function to render the buttons
 	function renderButtons () {
