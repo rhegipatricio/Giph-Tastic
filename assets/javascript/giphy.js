@@ -100,6 +100,7 @@ var interests = ["How I Met Your Mother", "Steph Curry", "Michael Jordan", "Orla
         
 
 };
+    //On click event to display the image after button is clicked
         $(document).on("click", ".interest", displayImages);
 });
 		
